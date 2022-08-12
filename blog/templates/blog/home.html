@@ -5,7 +5,9 @@
 >
   <div class="card-header">
     <a href="#" style="text-decoration: none">{{ post.author }}</a>
-    <small class="text-muted">&nbsp;&nbsp;<i>{{ post.date_posted }}</i></small>
+    <small class="text-muted"
+      >&nbsp;&nbsp;<i>{{ post.date_posted|date:"F d, Y" }}</i></small
+    >
   </div>
   <div class="card-body text-secondary">
     <h5 class="card-title">
