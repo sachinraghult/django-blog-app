@@ -11,8 +11,24 @@
       <h4 class="account-heading">{{ user.username }}</h4>
       <p class="text-secondary">{{ user.email }}</p>
     </div>
-
-    <!-- FORM HERE -->
   </div>
+
+  <!-- FORM -->
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <fieldset class="form-group">
+      <legend class="border-bottom mb-4">Profile Info</legend>
+      {{ u_form|crispy }} {{ p_form|crispy }}
+    </fieldset>
+    <div class="form-group">
+      <button
+        class="btn btn-outline-info"
+        type="submit"
+        style="margin-top: 20px"
+      >
+        Update
+      </button>
+    </div>
+  </form>
 </div>
 {% endblock content %}
