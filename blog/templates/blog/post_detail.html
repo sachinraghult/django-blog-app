@@ -1,18 +1,15 @@
 {% extends "blog/base.html" %} {% block content %}
-<div
-  class="card border-secondary mb-3"
-  style="max-width: 100%; margin-top: 20px"
->
+<div class="card border-secondary mb-3" style="max-width: 100%; margin-top: 20px">
   <div class="card-header">
     <img
       class="rounded-circle article-img"
       src="{{ object.author.profile.image.url }}"
       style="width: 50px; height: 50px"
     />
-    <a href="#" style="text-decoration: none">{{ object.author }}</a>
-    <small class="text-muted"
-      >&nbsp;&nbsp;<i>{{ object.date_posted|date:"F d, Y" }}</i></small
+    <a href="{% url 'user-posts' object.author.username %}" style="text-decoration: none"
+      >{{ object.author }}</a
     >
+    <small class="text-muted">&nbsp;&nbsp;<i>{{ object.date_posted|date:"F d, Y" }}</i></small>
     {% if object.author == user %}
     <a
       class="btn btn-secondary btn-sm mt-1 mb-1"
